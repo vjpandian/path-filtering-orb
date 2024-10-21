@@ -35,9 +35,9 @@ parameters:
       The location of the config to continue the pipeline with, please note that this parameter
       will be ignored if the user passes the config file per mapping in the mapping parameter
   executor-type:
-    type: string
-    description: "Pass default-machine if the job needs to be run on a machine executor instead"
-    default: "default-machine"
+    type: executor
+    description: "Use machine as default"
+    default: machine
   circleci_domain:
     type: string
     description: "The domain of the CircleCI installation - defaults to circleci.com. (Only necessary for CircleCI Server users)"
