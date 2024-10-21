@@ -11,7 +11,7 @@ description: >
   continuation config can be filtered to only perform relevant tasks.
 
 executor:
-  name: default
+  name: << parameters.executor >>
   tag: << parameters.tag >>
 
 resource_class: << parameters.resource_class >>
@@ -36,6 +36,10 @@ parameters:
     description: >
       The location of the config to continue the pipeline with, please note that this parameter
       will be ignored if the user passes the config file per mapping in the mapping parameter
+  executor:
+    type: string
+    description: "Pass default-machine if the job needs to be run on a machine executor instead"
+    default: "default"
   circleci_domain:
     type: string
     description: "The domain of the CircleCI installation - defaults to circleci.com. (Only necessary for CircleCI Server users)"
