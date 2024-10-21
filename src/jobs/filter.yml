@@ -11,7 +11,7 @@ description: >
   continuation config can be filtered to only perform relevant tasks.
 
 executor:
-  name: << parameters.executor >>
+  name: << parameters.executor-type >>
   tag: << parameters.tag >>
 
 resource_class: << parameters.resource_class >>
@@ -36,7 +36,7 @@ parameters:
     description: >
       The location of the config to continue the pipeline with, please note that this parameter
       will be ignored if the user passes the config file per mapping in the mapping parameter
-  executor:
+  executor-type:
     type: string
     description: "Pass default-machine if the job needs to be run on a machine executor instead"
     default: "default"
