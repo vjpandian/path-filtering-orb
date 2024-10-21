@@ -10,9 +10,7 @@ description: >
   supplied value for the setup workflow continuation. This way the
   continuation config can be filtered to only perform relevant tasks.
 
-executor:
-  name: << parameters.executor-type >>
-  tag: << parameters.tag >>
+executor: << parameters.executor-type >>
 
 resource_class: << parameters.resource_class >>
 
@@ -39,7 +37,7 @@ parameters:
   executor-type:
     type: string
     description: "Pass default-machine if the job needs to be run on a machine executor instead"
-    default: "default"
+    default: "default-machine"
   circleci_domain:
     type: string
     description: "The domain of the CircleCI installation - defaults to circleci.com. (Only necessary for CircleCI Server users)"
