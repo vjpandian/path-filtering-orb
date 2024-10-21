@@ -1,0 +1,12 @@
+description: >
+  This is a simple machine executor.
+
+machine:
+  image: <<parameters.tag>>
+
+parameters:
+  tag:
+    type: string
+    default: "default"
+    description: >
+      Use the default image or a custom Machine Image
