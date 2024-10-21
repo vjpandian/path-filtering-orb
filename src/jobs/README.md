@@ -13,7 +13,7 @@ View the included _[hello.yml](./hello.yml)_ example.
   # What will this job do?
   # Descriptions should be short, simple, and clear.
   Sample description
-executor: default
+executor: default-machine
 parameters:
   greeting:
     type: string
