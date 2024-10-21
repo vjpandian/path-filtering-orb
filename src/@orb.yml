@@ -7,7 +7,7 @@ description: >
   This orb does not support server at this time.
 display:
   home_url: "https://circleci.com/docs/2.0/dynamic-config"
-  source_url: "https://github.com/vjpandian/path-filtering-orb"
+  source_url: "https://github.com/vjpandian/path-filtering-orb-orb"
 
 orbs:
   continuation: circleci/continuation@1.0.0

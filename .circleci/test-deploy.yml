@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  path-filtering: circleci/path-filtering@dev:<<pipeline.git.revision>>
+  path-filtering: vjpandian/path-filtering-orb-orb@dev:<<pipeline.git.revision>>
   orb-tools: circleci/orb-tools@11.5
 
 filters: &filters
@@ -39,7 +39,7 @@ workflows:
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
-          orb-name: circleci/path-filtering
+          orb-name: vjpandian/path-filtering-orb-orb
           vcs-type: << pipeline.project.type >>
           pub-type: production
           requires:
