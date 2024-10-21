@@ -7,6 +7,6 @@ machine:
 parameters:
   tag:
     type: string
-    default: "default"
+    default: "ubuntu-2404:current"
     description: >
       Use the default image or a custom Machine Image
