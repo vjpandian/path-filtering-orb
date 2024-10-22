@@ -40,8 +40,8 @@ parameters:
     default: machine
   registry:
     type: string
-    description: 
-    default: 
+    description: "Registry for pulling the image"
+    default: python
   circleci_domain:
     type: string
     description: "The domain of the CircleCI installation - defaults to circleci.com. (Only necessary for CircleCI Server users)"
