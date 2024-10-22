@@ -38,10 +38,22 @@ parameters:
     type: executor
     description: "Use machine as default"
     default: machine
+  registry:
+    type: string
+    description: 
+    default: 
   circleci_domain:
     type: string
     description: "The domain of the CircleCI installation - defaults to circleci.com. (Only necessary for CircleCI Server users)"
     default: "circleci.com"
+  dockerhub-username:
+    type: string
+    description: "Username for Dockerhub"
+    default: DOCKERHUB_USERNAME
+  dockerhub-password:
+    type: string
+    description: "Credentials for Dockerhub"
+    default: DOCKERHUB_PASSWORD
   workspace_path:
     type: string
     description: "Path to attach the workspace to"

@@ -1,0 +1,25 @@
+description: |
+  The docker container to use when running this orb's jobs
+docker:
+  - image: <<parameters.regsistry>>/<<parameters.image>>:<<parameters.tag>>
+    auth:
+      username: <<parameters.dockerhub-username>>
+      password: <<parameters.dockerhub-password>>
+parameters:
+  dockerhub-username:
+    default: DOCKERHUB_USERNAME
+    type: string
+  dockerhub-password:
+    default: DOCKERHUB_PASSWORD
+    type: string
+  registry:
+    default: "cimg"
+    type: string
+  image:
+    default: python
+    description: Docker image name
+    type: string
+  tag:
+    default: '3.8'
+    description: Image tag
+    type: string
