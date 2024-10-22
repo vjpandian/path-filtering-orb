@@ -36,8 +36,8 @@ parameters:
       will be ignored if the user passes the config file per mapping in the mapping parameter
   executor-type:
     type: executor
-    description: "Use machine as default"
-    default: docker
+    description: "Use docker-private-registry as default for this type of job"
+    default: docker-private-registry
   registry:
     type: string
     description: "Registry for pulling the image"
