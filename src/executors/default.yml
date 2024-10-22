@@ -11,4 +11,3 @@ parameters:
     description: >
       Pick a specific cimg/python image variant:
       https://hub.docker.com/r/cimg/python/tags
-      
