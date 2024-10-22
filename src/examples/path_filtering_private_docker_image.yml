@@ -1,26 +1,31 @@
-version: 2.1
-setup: true
-orbs:
-  path-filtering: vjpandian/path-filtering-orb@1.1.4
-workflows:
-  setup-workflow:
-    jobs:
-      - path-filtering/filter-private-docker-executor:
-          pre-steps:
-            - checkout
-            - run:
-                name: print some pre-step here
-                command: |
-                  echo "hello"
-          base-revision: private-auth
-          circleci_domain: circleci.com
-          dockerhub-username: $ARTIFACTORY_USERNAME
-          dockerhub-password: $ARTIFACTORY_PASSWORD
-          # The docker image that this job will run is vjpandian1818/vjpandian:cimg-python
-          registry: "vjpandian1818"
-          image: "vjpandian"
-          tag: "cimg-python"
-          config-path: .circleci/continue-config.yml
-          mapping: |
-            terraform/.* tf-deploy true
-            helm/.* helm-deploy true
+
+description: >
+  Run the path filtering orb within a private docker image with Docker Registry
+  credentials passed
+usage:
+  version: 2.1
+  setup: true
+  orbs:
+    path-filtering: vjpandian/path-filtering-orb@1.1.4
+  workflows:
+    setup-workflow:
+      jobs:
+        - path-filtering/filter-private-docker-executor:
+            pre-steps:
+              - checkout
+              - run:
+                  name: print some pre-step here
+                  command: |
+                    echo "hello"
+            base-revision: private-auth
+            circleci_domain: circleci.com
+            dockerhub-username: $ARTIFACTORY_USERNAME
+            dockerhub-password: $ARTIFACTORY_PASSWORD
+            # The docker image that this job will run is vjpandian1818/vjpandian:cimg-python
+            registry: "vjpandian1818"
+            image: "vjpandian"
+            tag: "cimg-python"
+            config-path: .circleci/continue-config.yml
+            mapping: |
+              terraform/.* tf-deploy true
+              helm/.* helm-deploy true
