@@ -41,7 +41,11 @@ parameters:
   registry:
     type: string
     description: "Registry for pulling the image"
+    default: cimg
+  image:
+    type: string
     default: python
+    description: "image name in the Dockerhub registry"
   circleci_domain:
     type: string
     description: "The domain of the CircleCI installation - defaults to circleci.com. (Only necessary for CircleCI Server users)"
