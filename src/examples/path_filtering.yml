@@ -5,7 +5,7 @@ usage:
   version: 2.1
   setup: true
   orbs:
-    path-filtering: vjpandian/path-filtering-orb@0.1.7
+    path-filtering: vjpandian/path-filtering-orb@1.1.4
   workflows:
     generate-config:
       jobs:
