@@ -10,7 +10,11 @@ description: >
   supplied value for the setup workflow continuation. This way the
   continuation config can be filtered to only perform relevant tasks.
 
-executor: docker-private-registry
+docker:
+  - image: <<parameters.registry>>/<<parameters.image>>:<<parameters.tag>>
+    auth:
+      username: <<parameters.dockerhub-username>>
+      password: <<parameters.dockerhub-password>>
 
 resource_class: << parameters.resource_class >>
 
@@ -34,10 +38,6 @@ parameters:
     description: >
       The location of the config to continue the pipeline with, please note that this parameter
       will be ignored if the user passes the config file per mapping in the mapping parameter
-  executor-type:
-    type: executor
-    description: "Use docker-private-registry as default for this type of job"
-    default: docker-private-registry
   registry:
     type: string
     description: "Registry for pulling the image"
