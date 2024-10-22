@@ -10,7 +10,7 @@ description: >
   supplied value for the setup workflow continuation. This way the
   continuation config can be filtered to only perform relevant tasks.
 
-executor: << parameters.executor-type >>
+executor: docker-private-registry
 
 resource_class: << parameters.resource_class >>
 
@@ -37,11 +37,23 @@ parameters:
   executor-type:
     type: executor
     description: "Use machine as default"
-    default: machine
+    default: docker
+  registry:
+    type: string
+    description: "Registry for pulling the image"
+    default: python
   circleci_domain:
     type: string
     description: "The domain of the CircleCI installation - defaults to circleci.com. (Only necessary for CircleCI Server users)"
     default: "circleci.com"
+  dockerhub-username:
+    type: string
+    description: "Username for Dockerhub"
+    default: DOCKERHUB_USERNAME
+  dockerhub-password:
+    type: string
+    description: "Credentials for Dockerhub"
+    default: DOCKERHUB_PASSWORD
   workspace_path:
     type: string
     description: "Path to attach the workspace to"
